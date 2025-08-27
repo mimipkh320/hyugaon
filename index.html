@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴가온(Hyugaon) | 삶에 자연을 더하다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #FAF3DD; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #8FC0A9;
+            border: 3px solid #68B0AB;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-cover bg-center h-screen flex items-center justify-center text-white" style="background-image: url('https://placehold.co/1920x1080/68B0AB/FFFFFF?text=Hyugaon&font=noto-sans-kr')">
+        <div class="text-center bg-black bg-opacity-40 p-10 rounded-xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">삶에 자연을 더하다, 휴가온</h1>
+            <p class="text-xl md:text-2xl font-light">바이오필리아 철학을 담은 원예 치료 전문 사회적 협동조합</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 md:py-24">
+
+        <section id="philosophy" class="mb-20 md:mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-[#68B0AB]">자연의 품 안에서, 온전한 쉼과 치유를</h2>
+                <p class="mt-4 text-lg text-gray-600">휴가온은 자연과 인간의 본질적인 연결을 믿으며, 세 가지 핵심 가치를 바탕으로 설립되었습니다.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🌱</div>
+                    <h3 class="text-2xl font-bold mb-2 text-[#8FC0A9]">바이오필리아 철학</h3>
+                    <p>인간은 본능적으로 자연과 연결될 때 심리적, 신체적 안정을 얻는다는 철학을 기반으로 합니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-bold mb-2 text-[#8FC0A9]">사회적 협동조합</h3>
+                    <p>수익보다 사회적 가치 실현을 우선하며, 공동체의 건강한 성장을 목표로 합니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4">🪴</div>
+                    <h3 class="text-2xl font-bold mb-2 text-[#8FC0A9]">전문 원예 치료</h3>
+                    <p>식물의 생명력을 활용한 전문 프로그램을 통해 사람들의 삶의 질을 향상시킵니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="mb-20 md:mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-[#68B0AB]">생애 주기별 맞춤 솔루션</h2>
+                <p class="mt-4 text-lg text-gray-600">유아기부터 노년기까지, 삶의 각 단계에 필요한 발달 과업을 돕는 프로그램을 제공합니다.</p>
+            </div>
+            <div class="relative border-l-4 border-[#C8D5B9] ml-4 md:ml-0">
+                <div class="timeline-item mb-12 pl-10 relative">
+                    <h3 class="text-2xl font-bold text-[#8FC0A9]">👶 유아기 (0-6세): 오감쑥쑥 식물 놀이터</h3>
+                    <p class="mt-2 text-gray-700">오감 발달 및 정서적 안정을 목표로 창의력, 사회성, 소근육 발달을 돕습니다.</p>
+                </div>
+                <div class="timeline-item mb-12 pl-10 relative">
+                    <h3 class="text-2xl font-bold text-[#8FC0A9]">🧒 아동기 (7-12세): 초록 친구들과의 성장 여행</h3>
+                    <p class="mt-2 text-gray-700">책임감과 또래 관계 개선을 통해 자존감, 집중력, 문제 해결 능력을 향상시킵니다.</p>
+                </div>
+                <div class="timeline-item mb-12 pl-10 relative">
+                    <h3 class="text-2xl font-bold text-[#8FC0A9]">🧑‍🦱 청소년기 (13-19세): 나를 찾는 원예 워크숍</h3>
+                    <p class="mt-2 text-gray-700">스트레스 해소와 자기 성찰을 통해 정서 조절 능력 향상과 진로 탐색을 지원합니다.</p>
+                </div>
+                <div class="timeline-item mb-12 pl-10 relative">
+                    <h3 class="text-2xl font-bold text-[#8FC0A9]">👩 성인기 (20-64세): 오늘, 나에게 주는 초록 휴가</h3>
+                    <p class="mt-2 text-gray-700">일상 속 활력과 심리적 안정을 찾아 직무 스트레스 완화와 삶의 만족도를 증진시킵니다.</p>
+                </div>
+                <div class="timeline-item pl-10 relative">
+                    <h3 class="text-2xl font-bold text-[#8FC0A9]">👵 노년기 (65세 이상): 꽃과 함께하는 인생 2막</h3>
+                    <p class="mt-2 text-gray-700">신체·인지 기능 유지 및 사회적 관계 증진을 통해 인지 기능 향상과 소외감 해소를 돕습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="mb-20 md:mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-[#68B0AB]">데이터로 보는 휴가온의 효과</h2>
+                <p class="mt-4 text-lg text-gray-600">휴가온의 프로그램은 참가자들의 삶에 긍정적인 변화를 가져옵니다.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#8FC0A9]">프로그램 참여자 구성</h3>
+                    <p class="text-center text-gray-600 mb-6">모든 세대를 아우르는 프로그램으로, 특히 아동과 노년층의 참여가 활발합니다.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="participantsChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#8FC0A9]">프로그램 목표 달성 영역</h3>
+                    <p class="text-center text-gray-600 mb-6">정서적 안정과 사회성 향상에 특히 높은 효과를 보이며, 모든 영역에서 고른 발달을 지원합니다.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="goalsChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg md:col-span-2">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#8FC0A9]">스트레스 지수 변화</h3>
+                    <p class="text-center text-gray-600 mb-6">프로그램 참여 후, 모든 연령대에서 스트레스 지수가 유의미하게 감소했습니다. 특히 학업과 직무 스트레스가 높은 청소년 및 성인층에서 큰 폭의 감소를 보였습니다.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="stressChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partnership">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-[#68B0AB]">건강한 사회를 위한 초록빛 동행</h2>
+                <p class="mt-4 text-lg text-gray-600">기업, 학교, 병원, 공공기관 등 다양한 파트너와 함께 건강한 공동체를 만들어갑니다.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-3">🏢</div>
+                    <h4 class="font-bold text-lg">기업</h4>
+                    <p class="text-sm">임직원 힐링/워크숍</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-3">🏫</div>
+                    <h4 class="font-bold text-lg">학교</h4>
+                    <p class="text-sm">학생 정서 함양</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-3">🏥</div>
+                    <h4 class="font-bold text-lg">병원/복지관</h4>
+                    <p class="text-sm">심리 안정/재활</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-3">🏛️</div>
+                    <h4 class="font-bold text-lg">공공기관</h4>
+                    <p class="text-sm">시민 교육/캠페인</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#68B0AB] text-white mt-20 md:mt-32 py-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">당신의 삶에 휴가(休+我)를 선물하세요.</h2>
+            <p class="mt-4 mb-6">자연의 치유력이 필요한 순간, 휴가온과 함께하세요.</p>
+            <div class="space-y-2 md:space-y-0 md:space-x-6">
+                <span>웹사이트: www.hyugaaon.com</span>
+                <span>이메일: contact@hyugaaon.com</span>
+                <span>전화: 02-123-4567</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const wrapLabel = (label, maxWidth) => {
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length < maxWidth) {
+                    currentLine += (currentLine ? ' ' : '') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        };
+        
+        const palette = {
+            primary: '#68B0AB',
+            secondary: '#8FC0A9',
+            accent: '#C8D5B9',
+            light: '#FAF3DD',
+            darkText: '#333333'
+        };
+
+        const participantsCtx = document.getElementById('participantsChart').getContext('2d');
+        new Chart(participantsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['유아', '아동', '청소년', '성인', '노년'],
+                datasets: [{
+                    label: '참여자 구성',
+                    data: [18, 25, 15, 12, 30],
+                    backgroundColor: [
+                        '#68B0AB',
+                        '#8FC0A9',
+                        '#C8D5B9',
+                        '#a7b995',
+                        '#538c87',
+                    ],
+                    borderColor: '#FAF3DD',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const goalsCtx = document.getElementById('goalsChart').getContext('2d');
+        new Chart(goalsCtx, {
+            type: 'radar',
+            data: {
+                labels: ['정서적 안정', '사회성 향상', '인지 기능 개선', '신체 활동 증진', '창의력 발달'],
+                datasets: [{
+                    label: '프로그램 목표 달성도',
+                    data: [90, 85, 75, 70, 80],
+                    backgroundColor: 'rgba(104, 176, 171, 0.2)',
+                    borderColor: '#68B0AB',
+                    pointBackgroundColor: '#68B0AB',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#68B0AB'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: '#e0e0e0'
+                        },
+                        grid: {
+                            color: '#e0e0e0'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14
+                            },
+                            color: '#333'
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            stepSize: 20
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const stressCtx = document.getElementById('stressChart').getContext('2d');
+        const stressLabels = ['유아', '아동', ['청소년 (학업 스트레스)', '감소)'], ['성인 (직무 스트레스)', '감소)'], '노년'].map(l => Array.isArray(l) ? l : wrapLabel(l, 16));
+        new Chart(stressCtx, {
+            type: 'bar',
+            data: {
+                labels: stressLabels,
+                datasets: [
+                    {
+                        label: '프로그램 이전',
+                        data: [45, 60, 85, 80, 55],
+                        backgroundColor: '#C8D5B9',
+                        borderRadius: 4
+                    },
+                    {
+                        label: '프로그램 이후',
+                        data: [20, 30, 40, 35, 25],
+                        backgroundColor: '#68B0AB',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '스트레스 지수'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 
